@@ -173,7 +173,7 @@ func UpdateFood() gin.HandlerFunc {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": msg})
 				return
 			}
-			updateObj = append(updateObj, bson.E{"menu", food.Price})
+			updateObj = append(updateObj, bson.E{"menu", food.Menu_id})
 		}
 
 		food.Updated_at, _ = time.Parse(time.RFC3339, time.Now().Format(time.RFC3339))
